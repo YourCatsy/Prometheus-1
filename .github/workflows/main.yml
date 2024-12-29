@@ -30,5 +30,10 @@ jobs:
           sudo wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/bin/yq
           sudo chmod +x /usr/bin/yq
 
+      - name: Output Targets from prometheus.yml
+        run: |
+          echo "Checking targets value:"
+          yq ".scrape_configs[0].static_configs[0].targets" ./prometheus.yml
+
       - name: Test Prometheus Config
         run: bash -e ./.github/files/test_prometheus.sh ./.github/files/testCases.txt ./prometheus.yml
