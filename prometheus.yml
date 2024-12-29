@@ -6,7 +6,7 @@ scrape_configs:
     scrape_interval: 7s  # Интервал опроса метрик для этого задания
     metrics_path: "/actuator/prometheus"  # Путь к ресурсам метрик
     static_configs:
-      - targets: ['localhost:8080']  # Хост и порт приложения
+      - targets: ["'localhost:8080'"]
     basic_auth:
       username: "bob@gmail.com"
       password: "passBob"  # Учетные данные для доступа
