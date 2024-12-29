@@ -1,12 +1,12 @@
 global:
-  scrape_interval: 7s  # Интервал опроса метрик
+  scrape_interval: "7s"  # Интервал опроса метрик
 
 scrape_configs:
-  - job_name: 'My app'  # Название задания
-    metrics_path: '/actuator/prometheus'  # Путь к ресурсам метрик
+  - job_name: "My app"  # Название задания
+    metrics_path: "/actuator/prometheus"  # Путь к ресурсам метрик
     static_configs:
       - targets:
-          - 'localhost:8080'  # Хост и порт приложения
+          - "localhost:8080"  # Хост и порт приложения
     basic_auth:
-      username: 'bob@gmail.com'
-      password: 'passBob'  # Учетные данные для доступа
+      username: "bob@gmail.com"
+      password: "passBob"  # Учетные данные для доступа
